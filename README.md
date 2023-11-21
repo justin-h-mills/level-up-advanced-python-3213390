@@ -20,6 +20,14 @@ Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learn
 
 ## average_race_time.py
 
+In this challenge, given a log of race times determine the average race time for Jennifer Rhines, who’s an American long distance runner.
+
+### Requirements:
+- Update average_race_time.py:
+    - Complete the get_rhines_times() function, which returns a list of Jennifer Rhines’ race times.
+    - Complete get_average() function which returns, Jennifer Rhines’ average race time.
+    - See the function docstrings for details of the format of the return values.
+
 ``` python
 def get_rhines_times():
     """Return a list of Jennifer Rhines' race times"""
