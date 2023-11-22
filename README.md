@@ -67,3 +67,33 @@ def get_average():
 
     return f'{total / len(racetimes)}'[2:-5]
 ```
+
+## html2markdown.py
+
+In this challenge, convert text from HTML to Markdown
+
+### Requirements
+- Update html2markdown.py file that converts:
+    - Italics (`<em>`, `</em>` tags) -> *
+    - Consecutive spaces or line breaks -> a single space
+    - Paragraphs (`<p>`, `</p>` tags) -> 2 line breaks
+    - URLs from html links -> markdown
+
+``` python
+def html2markdown(html: str):
+    '''Take in html text as input and return markdown'''
+    
+    # replace italics
+    markdown = re.sub(r'<em>(.*?)</em>', r'*\1*', html)
+
+    # replace consecutive spaces or line breaks with a single space
+    markdown = re.sub(r'\s+', ' ', markdown)
+
+    # replace paragraphs with 2 line breaks
+    markdown = re.sub(r'<p>(.*?)</p>', r'\1\n\n', markdown)
+
+    # convert html links to markdown format
+    markdown = re.sub(r'<a\s+href=[\'"](.*?)[\'"].*?>(.*?)</a>', r'[\2](\1)', markdown)
+
+    return markdown.strip()
+```
