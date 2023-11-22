@@ -16,7 +16,7 @@ Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learn
 [gcs-video-url]: https://www.linkedin.com/learning/level-up-advanced-python/using-github-codespaces-with-this-course
 
 
-# ANSWERS
+# SOLUTIONS
 
 ## average_race_time.py
 
@@ -96,4 +96,25 @@ def html2markdown(html: str):
     markdown = re.sub(r'<a\s+href=[\'"](.*?)[\'"].*?>(.*?)</a>', r'[\2](\1)', markdown)
 
     return markdown.strip()
+```
+
+## pairwise_offset.py
+
+In this challenge create a pair-wise offset function that takes in as input a sequence
+
+### Requirements:
+- Update the file pairwise_offset.py so that:
+    - It accepts a sequence
+    - It accepts an offset, using 0 if nothing is provided
+    - It accepts a fillvalue, using `*` of nothing is provided
+    - It returns an iterable that includes a tuple of each corresponding item
+
+``` python
+def pairwise_offset(sequence: list[any], fillvalue: str = '*', offset: int = 0):
+    # Create lists for padding with the specified fill value and concatenate with the original sequence
+    top = list(sequence) + [fillvalue] * offset
+    bottom = [fillvalue] * offset + list(sequence)
+
+    # Pair the elements of the top and bottom lists and return as a list of tuples
+    return list(zip(top, bottom))
 ```
